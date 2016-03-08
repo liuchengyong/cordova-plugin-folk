@@ -20,8 +20,6 @@ package com.luoteng.folk.plugins;
 
 import android.content.Intent;
 
-import com.luoteng.folk.activity.cordova.MainCordovaActivity;
-
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaArgs;
 import org.apache.cordova.CordovaPlugin;
@@ -43,11 +41,11 @@ public class ActivityPlugin extends CordovaPlugin {
 
     public boolean execute(String action, CordovaArgs args, final CallbackContext callbackContext) throws JSONException {
         if (action.equals("start")) {
-            String className = args.isNull(0) ? MainCordovaActivity.class.getCanonicalName() : args.getString(0);
+            /** String className = args.isNull(0) ? MainCordovaActivity.class.getCanonicalName() : args.getString(0);
             String startUrl = args.getString(1);
             JSONObject extraPrefs = args.getJSONObject(2);
             this.startActivity(className, startUrl, extraPrefs);
-            callbackContext.success();
+            callbackContext.success(); **/
             return true;
         }
         return false;

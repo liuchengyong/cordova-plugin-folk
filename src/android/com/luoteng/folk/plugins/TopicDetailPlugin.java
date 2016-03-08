@@ -18,8 +18,6 @@
 */
 package com.luoteng.folk.plugins;
 
-import com.luoteng.folk.activity.TopicDetailActivity_;
-
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaArgs;
 import org.apache.cordova.CordovaPlugin;
@@ -37,7 +35,7 @@ public class TopicDetailPlugin extends CordovaPlugin {
     public boolean execute(String action, CordovaArgs args, final CallbackContext callbackContext) throws JSONException {
         if (action.equals("topicDetail")) {
             String topicId = args.getString(1);
-            TopicDetailActivity_.startAc(this.cordova.getActivity(),topicId,false);
+			Toast.makeText(this.cordova.getActivity(),"回调成功",Toast.LENGTH_SHORT).show();
             callbackContext.success();
             return true;
         }
