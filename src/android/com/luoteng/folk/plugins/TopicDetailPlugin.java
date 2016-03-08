@@ -35,7 +35,6 @@ public class TopicDetailPlugin extends CordovaPlugin {
     public boolean execute(String action, CordovaArgs args, final CallbackContext callbackContext) throws JSONException {
         if (action.equals("topicDetail")) {
             String topicId = args.getString(1);
-			Toast.makeText(this.cordova.getActivity(),"回调成功",Toast.LENGTH_SHORT).show();
             callbackContext.success();
             return true;
         }
