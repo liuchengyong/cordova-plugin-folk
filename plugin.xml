@@ -30,9 +30,9 @@
     </feature>
     </config-file>
 
-    <source-file src="src/android/ActivityPlugin.java" target-dir="src/com/luoteng/folk/plugins/ActivityPlugin"/>
-	<source-file src="src/android/TopicDetailPlugin.java" target-dir="src/com/luoteng/folk/plugins/TopicDetailPlugin"/>
-	<source-file src="src/android/LifeCyclePlugin.java" target-dir="src/com/luoteng/folk/plugins/LifeCyclePlugin"/>
+    <source-file src="src/android/com/luoteng/folk/plugins/ActivityPlugin.java" target-dir="src/com/luoteng/folk/plugins"/>
+	<source-file src="src/android/com/luoteng/folk/plugins/TopicDetailPlugin.java" target-dir="src/com/luoteng/folk/plugins"/>
+	<source-file src="src/android/com/luoteng/folk/plugins/LifeCyclePlugin.java" target-dir="src/com/luoteng/folk/plugins"/>
   </platform>
 
 </plugin>
