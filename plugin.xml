@@ -18,12 +18,21 @@
   <platform name="android">
 
     <config-file target="res/xml/config.xml" parent="/*">
-      <feature name="Hello">
-        <param name="android-package" value="com.example.plugin.Hello"/>
-      </feature>
+   <feature name="Activity">
+        <param name="android-package" value="com.luoteng.folk.plugins.ActivityPlugin" />
+    </feature>
+    <feature name="TopicDetail">
+        <param name="android-package" value="com.luoteng.folk.plugins.TopicDetailPlugin" />
+    </feature>
+    <feature name="LifeCycle">
+        <param name="android-package" value="com.luoteng.folk.plugins.LifeCyclePlugin" />
+        <param name="onload" value="true" />
+    </feature>
     </config-file>
 
-    <source-file src="src/android/Hello.java" target-dir="src/com/example/plugin/"/>
+    <source-file src="src/android/ActivityPlugin.java" target-dir="src/com/luoteng/folk/plugins/ActivityPlugin"/>
+	<source-file src="src/android/TopicDetailPlugin.java" target-dir="src/com/luoteng/folk/plugins/TopicDetailPlugin"/>
+	<source-file src="src/android/LifeCyclePlugin.java" target-dir="src/com/luoteng/folk/plugins/LifeCyclePlugin"/>
   </platform>
 
   <platform name="ios">
