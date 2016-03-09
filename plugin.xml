@@ -22,7 +22,12 @@
         <param name="android-package" value="com.luoteng.folk.plugins.ActivityPlugin" />
     </feature>
     <feature name="TopicDetail">
+	<!--action topicDetail -->
         <param name="android-package" value="com.luoteng.folk.plugins.TopicDetailPlugin" />
+    </feature>
+	 <feature name="ArticleId">
+	 <!--action articleId -->
+        <param name="android-package" value="com.luoteng.folk.plugins.ArticleIdPlugin" />
     </feature>
     <feature name="LifeCycle">
         <param name="android-package" value="com.luoteng.folk.plugins.LifeCyclePlugin" />
