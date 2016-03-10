@@ -18,9 +18,9 @@
   <platform name="android">
 
     <config-file target="res/xml/config.xml" parent="/*">
-	 <feature name="TopicDetail">
+	 <feature name="Folk">
 	<!--action topicDetail -->
-        <param name="android-package" value="com.luoteng.folk.plugins.TopicDetailPlugin" />
+        <param name="android-package" value="com.luoteng.folk.plugins.FolkPlugin" />
     </feature>
    <!--<feature name="Activity">
         <param name="android-package" value="com.luoteng.folk.plugins.ActivityPlugin" />
@@ -37,7 +37,7 @@
     </config-file>
 
    <!-- <source-file src="src/android/com/luoteng/folk/plugins/ActivityPlugin.java" target-dir="src/com/luoteng/folk/plugins"/> -->
-	<source-file src="src/android/com/luoteng/folk/plugins/TopicDetailPlugin.java" target-dir="src/com/luoteng/folk/plugins"/>
+	<source-file src="src/android/com/luoteng/folk/plugins/FolkPlugin.java" target-dir="src/com/luoteng/folk/plugins"/>
 	<!-- <source-file src="src/android/com/luoteng/folk/plugins/LifeCyclePlugin.java" target-dir="src/com/luoteng/folk/plugins"/> -->
   </platform>
 

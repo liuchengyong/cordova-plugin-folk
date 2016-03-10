@@ -18,6 +18,11 @@
 */
 package com.luoteng.folk.plugins;
 
+import android.widget.Toast;
+
+import com.luoteng.folk.activity.TopicDetailActivity_;
+import com.luoteng.folk.activity.cordova.InfoDetailActivity;
+
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaArgs;
 import org.apache.cordova.CordovaPlugin;
@@ -28,14 +33,18 @@ import org.json.JSONException;
  * @author mengxiangcheng
  *
  */
-public class TopicDetailPlugin extends CordovaPlugin {
+public class FolkPlugin extends CordovaPlugin {
 
-    static String TAG = "TopicDetailPlugin";
+    static String TAG = "FolkPlugin";
 
     public boolean execute(String action, CordovaArgs args, final CallbackContext callbackContext) throws JSONException {
+
         if (action.equals("topicDetail")) {
-            String topicId = args.getString(1);
+            String topicId = args.getString(0);
             callbackContext.success();
+            return true;
+        }else if(action.equals("articleId")) {
+            callbackContext.success("05654BA6-873D-48E0-BBC1-C60378503A81");
             return true;
         }
         return false;
