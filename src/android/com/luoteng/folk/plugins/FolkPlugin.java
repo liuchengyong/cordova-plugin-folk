@@ -17,12 +17,6 @@
        under the License.
 */
 package com.luoteng.folk.plugins;
-
-import android.widget.Toast;
-
-import com.luoteng.folk.activity.TopicDetailActivity_;
-import com.luoteng.folk.activity.cordova.InfoDetailActivity;
-
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaArgs;
 import org.apache.cordova.CordovaPlugin;
