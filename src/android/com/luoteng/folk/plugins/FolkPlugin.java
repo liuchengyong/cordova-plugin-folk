@@ -40,6 +40,10 @@ public class FolkPlugin extends CordovaPlugin {
         }else if(action.equals("articleId")) {
             callbackContext.success("05654BA6-873D-48E0-BBC1-C60378503A81");
             return true;
+        }else if(action.equals("imageShow"){
+            String params = args.getString(0);
+            callbackContext.success(params);
+            return true;
         }
         return false;
     }
