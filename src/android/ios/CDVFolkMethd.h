@@ -12,6 +12,12 @@
 #import <Cordova/CDVPlugin.h>
 @interface CDVFolkMethd : CDVPlugin<UIAlertViewDelegate>
 
-+(void)topicDetail:(CDVInvokedUrlCommand*)command;
+-(void)topicDetail;
+
+-(void)articleId;
+
+-(void)imageShow;
+
+
 
 @end
