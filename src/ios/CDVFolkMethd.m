@@ -29,7 +29,10 @@
     [alertView show];
 }
 
-
+-(Bool)test
+{
+   return false;
+}
 
 
 
