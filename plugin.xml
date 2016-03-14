@@ -27,7 +27,7 @@
 
     <platform name="ios">
         <config-file target="config.xml" parent="/*">
-            <feature name="Folk">
+            <feature name="CDVFolkMethd">
                 <param name="ios-package" value="CDVFolkMethd"/>
             </feature>
         </config-file>

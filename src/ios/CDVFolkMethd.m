@@ -10,29 +10,37 @@
 
 @implementation CDVFolkMethd
 
--(void)articleId
+-(void) echo:(CDVInvokedUrlCommand *) command
 {
-    UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"测试" message:@"测试测试" delegate:nil cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
-    [alertView show];
+    CDVPluginResult* pluginResult = nil;
+    NSString* echo = [command.arguments objectAtIndex:0];
+    if (echo != nil && [echo length] > 0)
+    {
+        pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:echo];
+    }
+    else
+    {
+        pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR];
+    }
+    [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
 }
 
--(void)topicDetail
+//线程处理
+- (void)myPluginMethod:(CDVInvokedUrlCommand*)command
 {
-    UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"测试" message:@"测试测试" delegate:nil cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
-    [alertView show];
+    // Check command.arguments here.
+    [self.commandDelegate runInBackground:^{
+        NSString* payload = nil;
+        // Some blocking logic...
+        CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:payload];
+        // The sendPluginResult method is thread-safe.
+        [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+    }];
 }
 
 
--(void)imageShow
-{
-    UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"测试" message:@"测试测试" delegate:nil cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
-    [alertView show];
-}
 
--(BOOL)test
-{
-    return NO;
-}
+
 
 
 
