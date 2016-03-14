@@ -29,11 +29,13 @@
     <platform name="ios">
         <config-file target="config.xml" parent="/*">
             <feature name="Folk">
-                <param name="ios-package" value="CDVFolkMethd"/>
+                <param name="ios-package" value="CDVNotification"/>
             </feature>
         </config-file>
-        <header-file src="src/ios/CDVFolkMethd.h" />
-        <source-file src="src/ios/CDVFolkMethd.m" />
+        <header-file src="src/ios/CDVNotification.h" />
+        <source-file src="src/ios/CDVNotification.m" />
+        <resource-file src="src/ios/CDVNotification.bundle" />
+        <framework src="AudioToolbox.framework" weak="true" />
     </platform>
 
 </plugin>
