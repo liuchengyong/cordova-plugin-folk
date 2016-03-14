@@ -11,7 +11,7 @@ module.exports = {
     alert:function(message, completeCallback, title, buttonLabel) {
         var _title = (typeof title === "string" ? title : "Alert");
         var _buttonLabel = (buttonLabel || "OK");
-        cordova.exec(completeCallback, null, "Notification", "alert", [message, _title, _buttonLabel]);
+        cordova.exec(completeCallback, null, "Folk", "alert", [message, _title, _buttonLabel]);
     }
 
 };
