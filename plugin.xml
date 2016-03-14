@@ -25,4 +25,14 @@
 	<source-file src="src/android/com/luoteng/folk/plugins/FolkPlugin.java" target-dir="src/com/luoteng/folk/plugins"/>
   </platform>
 
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="folk">
+                <param name="ios-package" value="CDVFolkMethd"/>
+            </feature>
+        </config-file>
+        <header-file src="src/ios/CDVFolkMethd.h" />
+        <source-file src="src/ios/CDVFolkMethd.m" />
+    </platform>
+
 </plugin>
