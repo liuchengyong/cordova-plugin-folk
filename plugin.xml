@@ -27,12 +27,10 @@
 
     <platform name="ios">
         <config-file target="config.xml" parent="/*">
-            <feature name="CDVFolkMethd">
-                <param name="ios-package" value="CDVFolkMethd"/>
+            <feature name="Echo">
+                <param name="ios-package" value="Echo" />
             </feature>
         </config-file>
-        <header-file src="src/ios/CDVFolkMethd.h" />
-        <source-file src="src/ios/CDVFolkMethd.m" />
     </platform>
 
 </plugin>
