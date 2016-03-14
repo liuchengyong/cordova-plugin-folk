@@ -10,23 +10,18 @@
 
 @implementation CDVFolkMethd
 
-+(void)articleId
-{
-    UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"测试" message:@"测试测试" delegate:nil cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
-    [alertView show];
-}
 
-+(void)topicDetail
+-(void)topicDetail:(CDVInvokedUrlCommand*)command
 {
-    UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"测试" message:@"测试测试" delegate:nil cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
-    [alertView show];
-}
+     NSString* callbackId = [command callbackId];
+        NSString* name = [[command arguments] objectAtIndex:0];
+        NSString* msg = [NSString stringWithFormat: @"Hello, %@", name];
 
+        CDVPluginResult* result = [CDVPluginResult
+                                   resultWithStatus:CDVCommandStatus_OK
+                                   messageAsString:msg];
 
-+(void)imageShow
-{
-    UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"测试" message:@"测试测试" delegate:nil cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
-    [alertView show];
+        [self success:result callbackId:callbackId];
 }
 
 
