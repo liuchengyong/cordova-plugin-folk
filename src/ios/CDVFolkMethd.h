@@ -18,6 +18,6 @@
 
 -(void)imageShow;
 
--(Bool)test;
+-(BOOL)test;
 
 @end

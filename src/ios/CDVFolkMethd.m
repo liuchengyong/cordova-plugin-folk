@@ -29,9 +29,9 @@
     [alertView show];
 }
 
--(Bool)test
+-(BOOL)test
 {
-   return false;
+    return NO;
 }
 
 
