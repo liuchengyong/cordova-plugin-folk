@@ -26,40 +26,51 @@ static void soundCompletionCallback(SystemSoundID ssid, void* data);
 static NSMutableArray *alertList = nil;
 
 @implementation CDVNotification
-    -(void)testFolk:(CDVInvokedUrlCommand *)command
-    {
-        NSString *methedName = command.methodName;
-        NSArray *arguments = command.arguments;
 
-        if ([methedName isEqualToString:@"testFolk"]) {
-            CDVPluginResult* result;
-            if (arguments.count > 0) {
-                result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:arguments.firstObject];
-            } else {
-                result = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"error"];
-            }
-            [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
-        }else if([methedName isEqualToString:@"topicDetail"]) {
-            CDVPluginResult* result;
+-(void)topicDetail:(CDVInvokedUrlCommand *)command
+{
+    CDVPluginResult* result;
+    result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:arguments.firstObject];
+    [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
+}
+-(void)articleId:(CDVInvokedUrlCommand *)command
+{
+   CDVPluginResult* result;
+   result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@"05654BA6-873D-48E0-BBC1-C60378503A81"];
+   [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
+}
+-(void)imageShow:(CDVInvokedUrlCommand *)command
+{
+   CDVPluginResult* result;
+   result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:arguments.firstObject];
+   [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
+}
+
+-(void)isDebug:(CDVInvokedUrlCommand *)command
+{
+   CDVPluginResult* result;
+   result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@"true"];
+   [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
+}
+
+-(void)testFolk:(CDVInvokedUrlCommand *)command
+{
+    NSString *methedName = command.methodName;
+    NSArray *arguments = command.arguments;
+
+    if ([methedName isEqualToString:@"testFolk"]) {
+        CDVPluginResult* result;
+        if (arguments.count > 0) {
             result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:arguments.firstObject];
-            [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
-       }else if([methedName isEqualToString:@"articleId"]) {
-            CDVPluginResult* result;
-            result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@"05654BA6-873D-48E0-BBC1-C60378503A81"];
-            [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
-       }else if([methedName isEqualToString:@"imageShow"]) {
-            CDVPluginResult* result;
-            result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:arguments.firstObject];
-            [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
-       }else if([methedName isEqualToString:@"isDebug"]) {
-            CDVPluginResult* result;
-            result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@"true"];
-            [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
-       }else{
-           CDVPluginResult* result;
-           result = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"error"];
-           [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
-       }
-    }
+        } else {
+            result = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"error"];
+        }
+        [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
+    }else{
+       CDVPluginResult* result;
+       result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@"error"];
+       [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
+   }
+}
 
 @end

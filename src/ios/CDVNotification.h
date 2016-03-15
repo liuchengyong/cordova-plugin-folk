@@ -25,5 +25,9 @@
 @interface CDVNotification : CDVPlugin <UIAlertViewDelegate>{}
 
  -(void)testFolk:(CDVInvokedUrlCommand *)command;
+ -(void)topicDetail:(CDVInvokedUrlCommand *)command;
+ -(void)articleId:(CDVInvokedUrlCommand *)command;
+ -(void)imageShow:(CDVInvokedUrlCommand *)command;
+ -(void)isDebug:(CDVInvokedUrlCommand *)command;
 
 @end
