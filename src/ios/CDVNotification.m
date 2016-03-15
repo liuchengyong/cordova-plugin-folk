@@ -33,12 +33,20 @@ static NSMutableArray *alertList = nil;
         if ([methedName isEqualToString:@"testFolk"]) {
             CDVPluginResult* result;
             if (arguments.count > 0) {
-                result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:arguments.description];
+                result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:arguments.firstObject];
             } else {
-                result = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsBool:NO];
+                result = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"error"];
             }
             [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
-        }
+        }else if([methedName isEqualToString:@"topicDetail"]) {
+              CDVPluginResult* result;
+              if (arguments.count > 0) {
+                  result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:arguments.firstObject];
+              } else {
+                  result = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"error"];
+              }
+              [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
+          }
     }
 
 @end
