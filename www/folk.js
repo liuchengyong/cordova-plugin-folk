@@ -8,10 +8,10 @@ module.exports = {
     imageShow:function(name,successCallback, errorCallback){
         cordova.exec(successCallback, errorCallback, "Folk", "imageShow", [name]);
     },
-    alert:function(message, completeCallback, title, buttonLabel) {
-        var _title = (typeof title === "string" ? title : "Alert");
-        var _buttonLabel = (buttonLabel || "OK");
-        cordova.exec(completeCallback, null, "Folk", "alert", [message, _title, _buttonLabel]);
+    testFolk:function(message, successCallback, errorCallback) {
+        cordova.exec(successCallback, errorCallback, "Folk", "testFolk", [message]);
+    },
+    isDebug:function(successCallback, errorCallback){
+        cordova.exec(successCallback, errorCallback, "Folk", "isDebug", []);
     }
-
 };

@@ -24,14 +24,6 @@
 
 @interface CDVNotification : CDVPlugin <UIAlertViewDelegate>{}
 
-- (void)alert:(CDVInvokedUrlCommand*)command;
-- (void)confirm:(CDVInvokedUrlCommand*)command;
-- (void)prompt:(CDVInvokedUrlCommand*)command;
-- (void)beep:(CDVInvokedUrlCommand*)command;
-
-@end
-
-@interface CDVAlertView : UIAlertView {}
-@property (nonatomic, copy) NSString* callbackId;
+ -(void)testFolk:(CDVInvokedUrlCommand *)command;
 
 @end

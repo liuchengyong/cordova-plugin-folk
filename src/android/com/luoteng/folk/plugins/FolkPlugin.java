@@ -44,6 +44,9 @@ public class FolkPlugin extends CordovaPlugin {
             String params = args.getString(0);
             callbackContext.success(params);
             return true;
+        }else if(action.equals("isDebug")){
+            callbackContext.success("true");
+            return true;
         }
         return false;
     }
