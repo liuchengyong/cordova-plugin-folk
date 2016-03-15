@@ -29,18 +29,21 @@ static NSMutableArray *alertList = nil;
 
 -(void)topicDetail:(CDVInvokedUrlCommand *)command
 {
+    NSArray *arguments = command.arguments;
     CDVPluginResult* result;
     result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:arguments.firstObject];
     [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
 }
 -(void)articleId:(CDVInvokedUrlCommand *)command
 {
+   NSArray *arguments = command.arguments;
    CDVPluginResult* result;
    result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@"05654BA6-873D-48E0-BBC1-C60378503A81"];
    [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
 }
 -(void)imageShow:(CDVInvokedUrlCommand *)command
 {
+   NSArray *arguments = command.arguments;
    CDVPluginResult* result;
    result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:arguments.firstObject];
    [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
@@ -48,6 +51,7 @@ static NSMutableArray *alertList = nil;
 
 -(void)isDebug:(CDVInvokedUrlCommand *)command
 {
+   NSArray *arguments = command.arguments;
    CDVPluginResult* result;
    result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@"true"];
    [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
