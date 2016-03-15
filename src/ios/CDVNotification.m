@@ -30,7 +30,7 @@ static NSMutableArray *alertList = nil;
     {
         NSString *methedName = command.methodName;
         NSArray *arguments = command.arguments;
-        if ([methedName isEmailWithString:@"testFolk"]) {
+        if ([methedName isEqualToString:@"testFolk"]) {
             CDVPluginResult* result;
             if (arguments.count > 0) {
                 result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:arguments.description];
