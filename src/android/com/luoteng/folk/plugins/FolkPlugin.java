@@ -47,7 +47,10 @@ public class FolkPlugin extends CordovaPlugin {
         }else if(action.equals("isDebug")){
             callbackContext.success("true");
             return true;
-        }
+        }else if(action.equals("focusWeChat")){
+             callbackContext.success("success");
+             return true;
+         }
         return false;
     }
 

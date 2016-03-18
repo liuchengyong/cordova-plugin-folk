@@ -13,5 +13,8 @@ module.exports = {
     },
     isDebug:function(successCallback, errorCallback){
         cordova.exec(successCallback, errorCallback, "Folk", "isDebug", []);
+    },
+    focusWeChat:function(successCallback, errorCallback){
+        cordova.exec(successCallback, errorCallback, "Folk", "focusWeChat", []);
     }
 };

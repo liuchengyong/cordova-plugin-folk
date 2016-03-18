@@ -29,5 +29,6 @@
  -(void)articleId:(CDVInvokedUrlCommand *)command;
  -(void)imageShow:(CDVInvokedUrlCommand *)command;
  -(void)isDebug:(CDVInvokedUrlCommand *)command;
+ -(void)focusWeChat:(CDVInvokedUrlCommand *)command;
 
 @end

@@ -56,6 +56,15 @@ static NSMutableArray *alertList = nil;
    result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@"true"];
    [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
 }
+-(void)focusWeChat:(CDVInvokedUrlCommand *)command
+{
+   NSArray *arguments = command.arguments;
+   CDVPluginResult* result;
+   result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@"success"];
+   [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
+}
+
+
 
 -(void)testFolk:(CDVInvokedUrlCommand *)command
 {
