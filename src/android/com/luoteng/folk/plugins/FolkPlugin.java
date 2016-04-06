@@ -53,11 +53,11 @@ public class FolkPlugin extends CordovaPlugin {
         }else if(action.equals("getPostUrl")){ //获取服务器的域名端口
             callbackContext.success("http://test.zhid58.com:8080");
             return true;
-        }else if(action.equals("doShare"){ //第三方分享
+        }else if(action.equals("doShare")){ //第三方分享
             String type = args.getString(0);
             callbackContext.success(type);
             return true;
-        }else if(action.equals("commentsList"){ //跳转评论列表
+        }else if(action.equals("commentsList")){ //跳转评论列表
             String articleId = args.getString(0);
             callbackContext.success(articleId);
             return true;
