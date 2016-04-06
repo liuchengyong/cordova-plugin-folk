@@ -76,6 +76,14 @@ static NSMutableArray *alertList = nil;
    [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
 }
 
+-(void)commentsList:(CDVInvokedUrlCommand *)command
+{
+   NSArray *arguments = command.arguments;
+   CDVPluginResult* result;
+   result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:arguments.firstObject];
+   [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
+}
+
 
 -(void)testFolk:(CDVInvokedUrlCommand *)command
 {

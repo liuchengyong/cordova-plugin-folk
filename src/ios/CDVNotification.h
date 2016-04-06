@@ -32,5 +32,5 @@
  -(void)focusWeChat:(CDVInvokedUrlCommand *)command; //关注微信公众号
  -(void)getPostUrl:(CDVInvokedUrlCommand *)command; //获取服务器的域名端口
  -(void)doShare:(CDVInvokedUrlCommand *)command; //第三方分享
-
+ -(void)commentsList:(CDVInvokedUrlCommand *)command; //跳转评论列表
 @end

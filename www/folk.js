@@ -23,4 +23,7 @@ module.exports = {
     doShare:function(type,successCallback, errorCallback){
         cordova.exec(successCallback, errorCallback, "Folk", "doShare", [type]);
     },
+    commentsList:function(articleId,successCallback, errorCallback){
+        cordova.exec(successCallback, errorCallback, "Folk", "commentsList", [articleId]);
+    }
 };

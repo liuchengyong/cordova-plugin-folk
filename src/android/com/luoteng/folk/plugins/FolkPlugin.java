@@ -57,6 +57,10 @@ public class FolkPlugin extends CordovaPlugin {
             String type = args.getString(0);
             callbackContext.success(type);
             return true;
+        }else if(action.equals("commentsList"){ //跳转评论列表
+            String articleId = args.getString(0);
+            callbackContext.success(articleId);
+            return true;
         }
         return false;
     }
