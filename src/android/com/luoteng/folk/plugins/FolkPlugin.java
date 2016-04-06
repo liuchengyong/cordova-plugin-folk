@@ -33,24 +33,31 @@ public class FolkPlugin extends CordovaPlugin {
 
     public boolean execute(String action, CordovaArgs args, final CallbackContext callbackContext) throws JSONException {
 
-        if (action.equals("topicDetail")) {
+        if (action.equals("topicDetail")) { //跳转点师详情
             String topicId = args.getString(0);
             callbackContext.success();
             return true;
-        }else if(action.equals("articleId")) {
-            callbackContext.success("05654BA6-873D-48E0-BBC1-C60378503A81");
+        }else if(action.equals("articleId")) { //获取资讯详情id
+            callbackContext.success("80A90D09-4984-4BFD-92FA-612C0AA197E7");
             return true;
-        }else if(action.equals("imageShow")){
+        }else if(action.equals("imageShow")){ //图片轮播
             String params = args.getString(0);
             callbackContext.success(params);
             return true;
-        }else if(action.equals("isDebug")){
+        }else if(action.equals("isDebug")){ //是否生产环境
             callbackContext.success("true");
             return true;
-        }else if(action.equals("focusWeChat")){
-             callbackContext.success("success");
-             return true;
-         }
+        }else if(action.equals("focusWeChat")){ //关注微信公众号
+            callbackContext.success("success");
+            return true;
+        }else if(action.equals("getPostUrl")){ //获取服务器的域名端口
+            callbackContext.success("http://test.zhid58.com:8080");
+            return true;
+        }else if(action.equals("doShare"){ //第三方分享
+            String type = args.getString(0);
+            callbackContext.success(type);
+            return true;
+        }
         return false;
     }
 

@@ -24,11 +24,13 @@
 
 @interface CDVNotification : CDVPlugin <UIAlertViewDelegate>{}
 
- -(void)testFolk:(CDVInvokedUrlCommand *)command;
- -(void)topicDetail:(CDVInvokedUrlCommand *)command;
- -(void)articleId:(CDVInvokedUrlCommand *)command;
- -(void)imageShow:(CDVInvokedUrlCommand *)command;
- -(void)isDebug:(CDVInvokedUrlCommand *)command;
- -(void)focusWeChat:(CDVInvokedUrlCommand *)command;
+ -(void)testFolk:(CDVInvokedUrlCommand *)command;  //测试folk
+ -(void)topicDetail:(CDVInvokedUrlCommand *)command; //跳转点师详情
+ -(void)articleId:(CDVInvokedUrlCommand *)command;//获取资讯详情id
+ -(void)imageShow:(CDVInvokedUrlCommand *)command;//图片轮播
+ -(void)isDebug:(CDVInvokedUrlCommand *)command; //是否生产环境
+ -(void)focusWeChat:(CDVInvokedUrlCommand *)command; //关注微信公众号
+ -(void)getPostUrl:(CDVInvokedUrlCommand *)command; //获取服务器的域名端口
+ -(void)doShare:(CDVInvokedUrlCommand *)command; //第三方分享
 
 @end

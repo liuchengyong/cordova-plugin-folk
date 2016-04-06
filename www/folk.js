@@ -16,5 +16,11 @@ module.exports = {
     },
     focusWeChat:function(successCallback, errorCallback){
         cordova.exec(successCallback, errorCallback, "Folk", "focusWeChat", []);
-    }
+    },
+    getPostUrl:function(successCallback, errorCallback){
+        cordova.exec(successCallback, errorCallback, "Folk", "getPostUrl", []);
+    },
+    doShare:function(type,successCallback, errorCallback){
+        cordova.exec(successCallback, errorCallback, "Folk", "doShare", [type]);
+    },
 };

@@ -36,9 +36,8 @@ static NSMutableArray *alertList = nil;
 }
 -(void)articleId:(CDVInvokedUrlCommand *)command
 {
-   NSArray *arguments = command.arguments;
    CDVPluginResult* result;
-   result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@"05654BA6-873D-48E0-BBC1-C60378503A81"];
+   result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@"80A90D09-4984-4BFD-92FA-612C0AA197E7"];
    [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
 }
 -(void)imageShow:(CDVInvokedUrlCommand *)command
@@ -51,19 +50,31 @@ static NSMutableArray *alertList = nil;
 
 -(void)isDebug:(CDVInvokedUrlCommand *)command
 {
-   NSArray *arguments = command.arguments;
    CDVPluginResult* result;
    result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@"true"];
    [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
 }
 -(void)focusWeChat:(CDVInvokedUrlCommand *)command
 {
-   NSArray *arguments = command.arguments;
    CDVPluginResult* result;
    result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@"success"];
    [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
 }
 
+-(void)getPostUrl:(CDVInvokedUrlCommand *)command
+{
+   CDVPluginResult* result;
+   result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@"http://test.zhid58.com:8080"];
+   [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
+}
+
+-(void)doShare:(CDVInvokedUrlCommand *)command
+{
+   NSArray *arguments = command.arguments;
+   CDVPluginResult* result;
+   result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:arguments.firstObject];
+   [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
+}
 
 
 -(void)testFolk:(CDVInvokedUrlCommand *)command
