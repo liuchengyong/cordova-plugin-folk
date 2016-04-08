@@ -25,5 +25,8 @@ module.exports = {
     },
     commentsList:function(articleId,successCallback, errorCallback){
         cordova.exec(successCallback, errorCallback, "Folk", "commentsList", [articleId]);
+    },
+    refreshCommentNum:function(articleId,successCallback, errorCallback){
+        cordova.exec(successCallback, errorCallback, "Folk", "refreshCommentNum", [articleId]);
     }
 };

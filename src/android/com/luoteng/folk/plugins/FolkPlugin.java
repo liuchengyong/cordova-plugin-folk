@@ -61,6 +61,10 @@ public class FolkPlugin extends CordovaPlugin {
             String articleId = args.getString(0);
             callbackContext.success(articleId);
             return true;
+        }else if(action.equals("refreshCommentNum")){ //通知移动端跟新评论数量
+            String articleId = args.getString(0);
+            callbackContext.success(articleId);
+            return true;
         }
         return false;
     }

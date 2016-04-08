@@ -33,4 +33,5 @@
  -(void)getPostUrl:(CDVInvokedUrlCommand *)command; //获取服务器的域名端口
  -(void)doShare:(CDVInvokedUrlCommand *)command; //第三方分享
  -(void)commentsList:(CDVInvokedUrlCommand *)command; //跳转评论列表
+ -(void)refreshCommentNum:(CDVInvokedUrlCommand *)command; //通知移动端跟新评论数量
 @end
