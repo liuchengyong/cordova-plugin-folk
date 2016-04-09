@@ -71,25 +71,22 @@ static NSMutableArray *alertList = nil;
 
 -(void)getUser:(CDVInvokedUrlCommand *)command //获得当前用户的信息
 {
-   NSArray *arguments = command.arguments;
    CDVPluginResult* result;
-   result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:arguments.firstObject];
+   result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@"user"];
    [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
 }
 
 -(void)goLogin:(CDVInvokedUrlCommand *)command //去登录页面
 {
-   NSArray *arguments = command.arguments;
    CDVPluginResult* result;
-   result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:arguments.firstObject];
+   result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@"login"];
    [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
 }
 
 -(void)getToken:(CDVInvokedUrlCommand *)command //获得当前用户的token
 {
-   NSArray *arguments = command.arguments;
    CDVPluginResult* result;
-   result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:arguments.firstObject];
+   result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@"heSss44Wj1Aj5T+yrc9S0xF9V21AY82JzpII0y6d1t4/DmatPlT5DbnTspbF96h4"];
    [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
 }
 
@@ -138,13 +135,12 @@ static NSMutableArray *alertList = nil;
 */
 -(void)getBrokeDetailId:(CDVInvokedUrlCommand *)command //获取爆料详情id
 {
-   NSArray *arguments = command.arguments;
    CDVPluginResult* result;
    result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:arguments.firstObject];
    [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
 }
 
--(void)brokeReply:(CDVInvokedUrlCommand *)command //回复爆料评论
+-(void)brokeReply:(CDVInvokedUrlCommand *)command //回复爆料评论  参数 爆料id
 {
    NSArray *arguments = command.arguments;
    CDVPluginResult* result;
