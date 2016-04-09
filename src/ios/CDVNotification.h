@@ -34,6 +34,8 @@
   -(void)doShare:(CDVInvokedUrlCommand *)command; //第三方分享 weixin/weibo/friend/all
   -(void)getUser:(CDVInvokedUrlCommand *)command; //获得当前用户的信息
   -(void)goLogin:(CDVInvokedUrlCommand *)command; //去登录页面
+  -(void)getToken:(CDVInvokedUrlCommand *)command;//获得当前用户的token
+
 
 
  //  资讯详情页

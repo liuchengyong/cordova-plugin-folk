@@ -23,6 +23,10 @@ module.exports = {
     goLogin: function(successCallback, errorCallback) { //去登录页面
         cordova.exec(successCallback, errorCallback, "Folk", "goLogin", []);
     },
+    getToken: function(successCallback, errorCallback) { //去登录页面
+        cordova.exec(successCallback, errorCallback, "Folk", "getToken", []);
+    },
+
 
 
     //  资讯详情页

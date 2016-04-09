@@ -85,6 +85,14 @@ static NSMutableArray *alertList = nil;
    [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
 }
 
+-(void)getToken:(CDVInvokedUrlCommand *)command //获得当前用户的token
+{
+   NSArray *arguments = command.arguments;
+   CDVPluginResult* result;
+   result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:arguments.firstObject];
+   [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
+}
+
 
 /**
 * 
