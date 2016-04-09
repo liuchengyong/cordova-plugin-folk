@@ -27,20 +27,12 @@ static NSMutableArray *alertList = nil;
 
 @implementation CDVNotification
 
--(void)topicDetail:(CDVInvokedUrlCommand *)command
-{
-    NSArray *arguments = command.arguments;
-    CDVPluginResult* result;
-    result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:arguments.firstObject];
-    [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
-}
--(void)articleId:(CDVInvokedUrlCommand *)command
-{
-   CDVPluginResult* result;
-   result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@"80A90D09-4984-4BFD-92FA-612C0AA197E7"];
-   [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
-}
--(void)imageShow:(CDVInvokedUrlCommand *)command
+/**
+* 
+*  公用方法
+*
+*/
+-(void)imageShow:(CDVInvokedUrlCommand *)command  // 图片轮播
 {
    NSArray *arguments = command.arguments;
    CDVPluginResult* result;
@@ -48,27 +40,28 @@ static NSMutableArray *alertList = nil;
    [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
 }
 
--(void)isDebug:(CDVInvokedUrlCommand *)command
+-(void)isDebug:(CDVInvokedUrlCommand *)command  // 是否生产环境
 {
    CDVPluginResult* result;
    result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@"true"];
    [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
 }
--(void)focusWeChat:(CDVInvokedUrlCommand *)command
+
+-(void)focusWeChat:(CDVInvokedUrlCommand *)command //  关注微信公众号
 {
    CDVPluginResult* result;
    result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@"success"];
    [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
 }
 
--(void)getPostUrl:(CDVInvokedUrlCommand *)command
+-(void)getPostUrl:(CDVInvokedUrlCommand *)command //获取服务器的域名端口
 {
    CDVPluginResult* result;
    result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@"http://test.zhid58.com:8080"];
    [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
 }
 
--(void)doShare:(CDVInvokedUrlCommand *)command
+-(void)doShare:(CDVInvokedUrlCommand *)command //第三方分享 weixin/weibo/friend/all
 {
    NSArray *arguments = command.arguments;
    CDVPluginResult* result;
@@ -76,7 +69,7 @@ static NSMutableArray *alertList = nil;
    [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
 }
 
--(void)commentsList:(CDVInvokedUrlCommand *)command
+-(void)getUser:(CDVInvokedUrlCommand *)command //获得当前用户的信息
 {
    NSArray *arguments = command.arguments;
    CDVPluginResult* result;
@@ -84,13 +77,75 @@ static NSMutableArray *alertList = nil;
    [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
 }
 
--(void)refreshCommentNum:(CDVInvokedUrlCommand *)command
+-(void)goLogin:(CDVInvokedUrlCommand *)command //去登录页面
 {
    NSArray *arguments = command.arguments;
    CDVPluginResult* result;
    result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:arguments.firstObject];
    [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
 }
+
+
+/**
+* 
+*资讯详情页
+*
+*/
+-(void)articleId:(CDVInvokedUrlCommand *)command //获取资讯详情id
+{
+   CDVPluginResult* result;
+   result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@"80A90D09-4984-4BFD-92FA-612C0AA197E7"];
+   [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
+}
+
+-(void)commentsList:(CDVInvokedUrlCommand *)command // 跳转资讯评论列表
+{
+   NSArray *arguments = command.arguments;
+   CDVPluginResult* result;
+   result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:arguments.firstObject];
+   [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
+}
+
+-(void)topicDetail:(CDVInvokedUrlCommand *)command // 跳转点师详情
+{
+    NSArray *arguments = command.arguments;
+    CDVPluginResult* result;
+    result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:arguments.firstObject];
+    [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
+}
+
+-(void)refreshCommentNum:(CDVInvokedUrlCommand *)command //  通知移动端跟新评论数量
+{
+   NSArray *arguments = command.arguments;
+   CDVPluginResult* result;
+   result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:arguments.firstObject];
+   [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
+}
+
+
+/**
+* 
+* 爆料详情页
+*
+*/
+-(void)getBrokeDetailId:(CDVInvokedUrlCommand *)command //获取爆料详情id
+{
+   NSArray *arguments = command.arguments;
+   CDVPluginResult* result;
+   result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:arguments.firstObject];
+   [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
+}
+
+-(void)brokeReply:(CDVInvokedUrlCommand *)command //回复爆料评论
+{
+   NSArray *arguments = command.arguments;
+   CDVPluginResult* result;
+   result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:arguments.firstObject];
+   [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
+}
+
+
+
 
 
 -(void)testFolk:(CDVInvokedUrlCommand *)command

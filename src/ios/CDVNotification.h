@@ -25,13 +25,28 @@
 @interface CDVNotification : CDVPlugin <UIAlertViewDelegate>{}
 
  -(void)testFolk:(CDVInvokedUrlCommand *)command;  //测试folk
- -(void)topicDetail:(CDVInvokedUrlCommand *)command; //跳转点师详情
- -(void)articleId:(CDVInvokedUrlCommand *)command;//获取资讯详情id
- -(void)imageShow:(CDVInvokedUrlCommand *)command;//图片轮播
- -(void)isDebug:(CDVInvokedUrlCommand *)command; //是否生产环境
- -(void)focusWeChat:(CDVInvokedUrlCommand *)command; //关注微信公众号
- -(void)getPostUrl:(CDVInvokedUrlCommand *)command; //获取服务器的域名端口
- -(void)doShare:(CDVInvokedUrlCommand *)command; //第三方分享
- -(void)commentsList:(CDVInvokedUrlCommand *)command; //跳转评论列表
- -(void)refreshCommentNum:(CDVInvokedUrlCommand *)command; //通知移动端跟新评论数量
+
+  // 公共的方法
+  -(void)imageShow:(CDVInvokedUrlCommand *)command;//图片轮播
+  -(void)isDebug:(CDVInvokedUrlCommand *)command; //是否生产环境
+  -(void)focusWeChat:(CDVInvokedUrlCommand *)command; //关注微信公众号
+  -(void)getPostUrl:(CDVInvokedUrlCommand *)command; //获取服务器的域名端口
+  -(void)doShare:(CDVInvokedUrlCommand *)command; //第三方分享 weixin/weibo/friend/all
+  -(void)getUser:(CDVInvokedUrlCommand *)command; //获得当前用户的信息
+  -(void)goLogin:(CDVInvokedUrlCommand *)command; //去登录页面
+
+
+ //  资讯详情页
+  -(void)articleId:(CDVInvokedUrlCommand *)command;//获取资讯详情id
+  -(void)commentsList:(CDVInvokedUrlCommand *)command; //跳转资讯评论列表
+  -(void)topicDetail:(CDVInvokedUrlCommand *)command; //跳转点师详情
+  -(void)refreshCommentNum:(CDVInvokedUrlCommand *)command; //通知移动端跟新评论数量
+
+ // 爆料详情页
+  -(void)getBrokeDetailId:(CDVInvokedUrlCommand *)command;//获取爆料详情id
+  -(void)brokeReply:(CDVInvokedUrlCommand *)command;//回复爆料评论
+
+
+
+
 @end
