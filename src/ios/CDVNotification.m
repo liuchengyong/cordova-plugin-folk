@@ -136,7 +136,7 @@ static NSMutableArray *alertList = nil;
 -(void)getBrokeDetailId:(CDVInvokedUrlCommand *)command //获取爆料详情id
 {
    CDVPluginResult* result;
-   result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:arguments.firstObject];
+   result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@"244D8A86-A1BD-4C6A-8601-2A4874CA0DB5"];
    [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
 }
 
