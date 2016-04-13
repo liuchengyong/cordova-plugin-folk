@@ -90,6 +90,13 @@ static NSMutableArray *alertList = nil;
    [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
 }
 
+-(void)showToast:(CDVInvokedUrlCommand *)command //客户端的Toast 
+{
+   NSArray *arguments = command.arguments;
+   CDVPluginResult* result;
+   result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:arguments.firstObject];
+   [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
+}
 
 /**
 * 
@@ -147,10 +154,6 @@ static NSMutableArray *alertList = nil;
    result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:arguments.firstObject];
    [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
 }
-
-
-
-
 
 -(void)testFolk:(CDVInvokedUrlCommand *)command
 {
