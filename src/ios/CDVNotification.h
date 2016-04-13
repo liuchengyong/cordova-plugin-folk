@@ -49,7 +49,7 @@
   -(void)getBrokeDetailId:(CDVInvokedUrlCommand *)command;//获取爆料详情id
   -(void)brokeReply:(CDVInvokedUrlCommand *)command;//回复爆料评论
   -(void)getBrokeDetail:(CDVInvokedUrlCommand *)command;//获取爆料信息
-
+  -(void)startComments:(CDVInvokedUrlCommand *)command;//开始评论
 
 
 

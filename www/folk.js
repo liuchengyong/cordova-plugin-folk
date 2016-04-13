@@ -59,6 +59,10 @@ module.exports = {
     getBrokeDetail: function(msg,successCallback, errorCallback) { //获取爆料详情id
         cordova.exec(successCallback, errorCallback, "Folk", "getBrokeDetail", [msg]);
     },
+    startComments: function(successCallback, errorCallback) { //开始评论
+        cordova.exec(successCallback, errorCallback, "Folk", "startComments", []);
+    },
+    
     
     testFolk: function(message, successCallback, errorCallback) {
         cordova.exec(successCallback, errorCallback, "Folk", "testFolk", [message]);

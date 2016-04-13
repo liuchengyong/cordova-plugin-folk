@@ -162,6 +162,12 @@ static NSMutableArray *alertList = nil;
    result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:arguments.firstObject];
    [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
 }
+-(void)startComments:(CDVInvokedUrlCommand *)command //获取爆料页面相关信息
+{
+  CDVPluginResult* result;
+  result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@"start"];
+  [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
+}
 
 -(void)testFolk:(CDVInvokedUrlCommand *)command
 {
