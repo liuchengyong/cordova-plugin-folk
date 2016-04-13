@@ -67,7 +67,6 @@ static NSMutableArray *alertList = nil;
    CDVPluginResult* result;
    result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:arguments.firstObject];
    [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
-   0
 }
 
 -(void)getUser:(CDVInvokedUrlCommand *)command //获得当前用户的信息
