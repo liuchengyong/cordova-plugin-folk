@@ -13,8 +13,8 @@ module.exports = {
     getPostUrl: function(successCallback, errorCallback) { //获取服务器的域名端口
         cordova.exec(successCallback, errorCallback, "Folk", "getPostUrl", []);
     },
-    doShare: function(type, successCallback, errorCallback) { //第三方分享 weixin/weibo/friend/all
-        cordova.exec(successCallback, errorCallback, "Folk", "doShare", [type]);
+    doShare: function(msg, successCallback, errorCallback) { //第三方分享 weixin/weibo/friend/all
+        cordova.exec(successCallback, errorCallback, "Folk", "doShare", [msg]);
     },
 
     getUser: function(successCallback, errorCallback) { //获得当前用户的信息
@@ -56,8 +56,10 @@ module.exports = {
     brokeReply: function(brokeId, successCallback, errorCallback) { //跳转资讯评论列表
         cordova.exec(successCallback, errorCallback, "Folk", "brokeReply", [brokeId]);
     },
-
-
+    getBrokeDetail: function(msg,successCallback, errorCallback) { //获取爆料详情id
+        cordova.exec(successCallback, errorCallback, "Folk", "getBrokeDetail", [msg]);
+    },
+    
     testFolk: function(message, successCallback, errorCallback) {
         cordova.exec(successCallback, errorCallback, "Folk", "testFolk", [message]);
     }

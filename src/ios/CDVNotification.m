@@ -67,6 +67,7 @@ static NSMutableArray *alertList = nil;
    CDVPluginResult* result;
    result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:arguments.firstObject];
    [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
+   0
 }
 
 -(void)getUser:(CDVInvokedUrlCommand *)command //获得当前用户的信息
@@ -150,6 +151,14 @@ static NSMutableArray *alertList = nil;
 -(void)brokeReply:(CDVInvokedUrlCommand *)command //回复爆料评论  参数 爆料id
 {
    NSArray *arguments = command.arguments;
+   CDVPluginResult* result;
+   result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:arguments.firstObject];
+   [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
+}
+
+-(void)getBrokeDetail:(CDVInvokedUrlCommand *)command //获取爆料页面相关信息
+{
+  NSArray *arguments = command.arguments;
    CDVPluginResult* result;
    result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:arguments.firstObject];
    [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
