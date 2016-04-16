@@ -33,14 +33,8 @@ public class FolkPlugin extends CordovaPlugin {
 
     public boolean execute(String action, CordovaArgs args, final CallbackContext callbackContext) throws JSONException {
 
-        if (action.equals("topicDetail")) { //跳转点师详情
-            String topicId = args.getString(0);
-            callbackContext.success();
-            return true;
-        }else if(action.equals("articleId")) { //获取资讯详情id
-            callbackContext.success("80A90D09-4984-4BFD-92FA-612C0AA197E7");
-            return true;
-        }else if(action.equals("imageShow")){ //图片轮播
+        //common function
+        if(action.equals("imageShow")){ //图片轮播
             String params = args.getString(0);
             callbackContext.success(params);
             return true;
@@ -57,7 +51,24 @@ public class FolkPlugin extends CordovaPlugin {
             String type = args.getString(0);
             callbackContext.success(type);
             return true;
-        }else if(action.equals("commentsList")){ //跳转评论列表
+        }else if(action.equals("goLogin")){ //native skip loginActivity
+            callbackContext.success("login");
+            return true;
+        }else if(action.equals("showToast")){ //show tooltip
+            callbackContext.success("toast");
+            return true;
+        }
+
+
+        // news detail page 
+        if (action.equals("topicDetail")) { //跳转点师详情
+            String topicId = args.getString(0);
+            callbackContext.success();
+            return true;
+        }else if(action.equals("articleId")) { //获取资讯详情id
+            callbackContext.success("80A90D09-4984-4BFD-92FA-612C0AA197E7");
+            return true;
+        }else if(action.equals("commentsList")){ //跳转资讯详情评论列表
             String articleId = args.getString(0);
             callbackContext.success(articleId);
             return true;
@@ -66,8 +77,22 @@ public class FolkPlugin extends CordovaPlugin {
             callbackContext.success(articleId);
             return true;
         }
+
+
+        // dynamic detail page
+        if (action.equals("getDynamicDeatil")) { //get dynamicDatail page baseNews
+            String topicId = args.getString(0);
+            callbackContext.success();
+            return true;
+        }else if(action.equals("goDynamicCommentList")){ //native skip dynamicComnentList activity
+            callbackContext.success("goDynamicCommentList");
+            return true;
+        }
+
+
         return false;
     }
 
+    
 
 }

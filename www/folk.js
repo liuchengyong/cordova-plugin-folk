@@ -26,7 +26,7 @@ module.exports = {
     getToken: function(successCallback, errorCallback) { //去登录页面
         cordova.exec(successCallback, errorCallback, "Folk", "getToken", []);
     },
-    showToast:function(msg,successCallback, errorCallback) { //去登录页面
+    showToast:function(msg,successCallback, errorCallback) { //show tooltip
         cordova.exec(successCallback, errorCallback, "Folk", "showToast", [msg]);
     },
 
@@ -62,7 +62,15 @@ module.exports = {
     startComments: function(successCallback, errorCallback) { //开始评论
         cordova.exec(successCallback, errorCallback, "Folk", "startComments", []);
     },
-    
+
+
+    // dynamic detail page
+    getDynamicDeatil: function(msg,successCallback, errorCallback) { //get dynamicDatail page baseNews
+        cordova.exec(successCallback, errorCallback, "Folk", "getDynamicDeatil", [msg]);
+    },
+    goDynamicCommentList: function(successCallback, errorCallback) { //native skip dynamicComnentList activity
+        cordova.exec(successCallback, errorCallback, "Folk", "goDynamicCommentList", []);
+    },
     
     testFolk: function(message, successCallback, errorCallback) {
         cordova.exec(successCallback, errorCallback, "Folk", "testFolk", [message]);
