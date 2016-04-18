@@ -71,6 +71,9 @@ module.exports = {
     goDynamicCommentList: function(successCallback, errorCallback) { //native skip dynamicComnentList activity
         cordova.exec(successCallback, errorCallback, "Folk", "goDynamicCommentList", []);
     },
+    commitDynamicLike: function(msg,successCallback, errorCallback) { //native skip dynamicComnentList activity
+        cordova.exec(successCallback, errorCallback, "Folk", "commitDynamicLike", [msg]);
+    },
     
     testFolk: function(message, successCallback, errorCallback) {
         cordova.exec(successCallback, errorCallback, "Folk", "testFolk", [message]);

@@ -86,6 +86,9 @@ public class FolkPlugin extends CordovaPlugin {
         }else if(action.equals("goDynamicCommentList")){ //native skip dynamicComnentList activity
             callbackContext.success("goDynamicCommentList");
             return true;
+        }else if(action.equals("commitDynamicLike")){ // commit like counts and isLike 
+            callbackContext.success(args.getString(0));
+            return true;
         }
 
 

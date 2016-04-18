@@ -54,6 +54,7 @@
  // dynamic detail page 
   -(void)getDynamicDetail:(CDVInvokedUrlCommand *)command;//get dynamicDatail page baseNews
   -(void)goDynamicCommentList:(CDVInvokedUrlCommand *)command;//native skip dynamicComnentList activity
+  -(void)commitDynamicLike:(CDVInvokedUrlCommand *)command;//commit dynamic like counts and isLike
 
 
 
