@@ -80,9 +80,8 @@ public class FolkPlugin extends CordovaPlugin {
 
 
         // dynamic detail page
-        if (action.equals("getDynamicDeatil")) { //get dynamicDatail page baseNews
-            String topicId = args.getString(0);
-            callbackContext.success();
+        if (action.equals("getDynamicDetail")) { //get dynamicDatail page baseNews
+            callbackContext.success(args.getString(0));
             return true;
         }else if(action.equals("goDynamicCommentList")){ //native skip dynamicComnentList activity
             callbackContext.success("goDynamicCommentList");

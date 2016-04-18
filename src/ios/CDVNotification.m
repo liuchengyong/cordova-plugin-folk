@@ -175,7 +175,7 @@ static NSMutableArray *alertList = nil;
  *
  * dynamic detail page 
  */
--(void)getDynamicDeatil:(CDVInvokedUrlCommand *)command //get dynamicDatail page baseNews
+-(void)getDynamicDetail:(CDVInvokedUrlCommand *)command //get dynamicDatail page baseNews
 {
   NSArray *arguments = command.arguments;
   CDVPluginResult* result;

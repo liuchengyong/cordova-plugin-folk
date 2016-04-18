@@ -52,7 +52,7 @@
   -(void)startComments:(CDVInvokedUrlCommand *)command;//开始评论
 
  // dynamic detail page 
-  -(void)getDynamicDeatil:(CDVInvokedUrlCommand *)command;//get dynamicDatail page baseNews
+  -(void)getDynamicDetail:(CDVInvokedUrlCommand *)command;//get dynamicDatail page baseNews
   -(void)goDynamicCommentList:(CDVInvokedUrlCommand *)command;//native skip dynamicComnentList activity
 
 
