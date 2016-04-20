@@ -68,8 +68,8 @@ module.exports = {
     getDynamicDetail: function(msg,successCallback, errorCallback) { //get dynamicDatail page baseNews
         cordova.exec(successCallback, errorCallback, "Folk", "getDynamicDetail", [msg]);
     },
-    goDynamicCommentList: function(successCallback, errorCallback) { //native skip dynamicComnentList activity
-        cordova.exec(successCallback, errorCallback, "Folk", "goDynamicCommentList", []);
+    goDynamicCommentList: function(msg,successCallback, errorCallback) { //native skip dynamicComnentList activity
+        cordova.exec(successCallback, errorCallback, "Folk", "goDynamicCommentList", [msg]);
     },
     commitDynamicLike: function(msg,successCallback, errorCallback) { //native skip dynamicComnentList activity
         cordova.exec(successCallback, errorCallback, "Folk", "commitDynamicLike", [msg]);

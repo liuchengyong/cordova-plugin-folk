@@ -184,8 +184,9 @@ static NSMutableArray *alertList = nil;
 }
 -(void)goDynamicCommentList:(CDVInvokedUrlCommand *)command //native skip dynamicComnentList activity
 {
+  NSArray *arguments = command.arguments;
   CDVPluginResult* result;
-  result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@"goDynamicCommentList"];
+  result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:arguments.firstObject];
   [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
 }
 -(void)commitDynamicLike:(CDVInvokedUrlCommand *)command //native skip dynamicComnentList activity
