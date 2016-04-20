@@ -1,8 +1,8 @@
 module.exports = {
 
     // 公共的方法
-    imageShow: function(name, successCallback, errorCallback) { //图片轮播
-        cordova.exec(successCallback, errorCallback, "Folk", "imageShow", [name]);
+    imageShow: function(name, successCallback, errorCallback , isDebug) { //图片轮播
+        cordova.exec(app.successCallback(successCallback,isDebug), errorCallback, "Folk", "imageShow", [name]);
     },
     isDebug: function(successCallback, errorCallback) { //是否生产环境
         cordova.exec(successCallback, errorCallback, "Folk", "isDebug", []);
@@ -10,13 +10,12 @@ module.exports = {
     focusWeChat: function(successCallback, errorCallback) { //关注微信公众号
         cordova.exec(successCallback, errorCallback, "Folk", "focusWeChat", []);
     },
-    getPostUrl: function(successCallback, errorCallback) { //获取服务器的域名端口
-        cordova.exec(successCallback, errorCallback, "Folk", "getPostUrl", []);
+    getPostUrl: function(successCallback, errorCallback , isDebug) { //获取服务器的域名端口
+        cordova.exec(app.successCallback(successCallback,isDebug), errorCallback, "Folk", "getPostUrl", []);
     },
     doShare: function(msg, successCallback, errorCallback) { //第三方分享 weixin/weibo/friend/all
         cordova.exec(successCallback, errorCallback, "Folk", "doShare", [msg]);
     },
-
     getUser: function(successCallback, errorCallback) { //获得当前用户的信息
         cordova.exec(successCallback, errorCallback, "Folk", "getUser", []);
     },
@@ -26,8 +25,8 @@ module.exports = {
     getToken: function(successCallback, errorCallback) { //去登录页面
         cordova.exec(successCallback, errorCallback, "Folk", "getToken", []);
     },
-    showToast:function(msg,successCallback, errorCallback) { //show tooltip
-        cordova.exec(successCallback, errorCallback, "Folk", "showToast", [msg]);
+    showToast:function(msg,successCallback, errorCallback, isDebug) { //show tooltip
+        cordova.exec(app.successCallback(successCallback,isDebug), errorCallback, "Folk", "showToast", [msg]);
     },
 
 
@@ -65,18 +64,22 @@ module.exports = {
 
 
     // dynamic detail page
-    getDynamicDetail: function(msg,successCallback, errorCallback) { //get dynamicDatail page baseNews
-        cordova.exec(successCallback, errorCallback, "Folk", "getDynamicDetail", [msg]);
+    getDynamicDetail: function(msg,successCallback, errorCallback , isDebug) { //get dynamicDatail page baseNews
+        cordova.exec(app.successCallback(successCallback,isDebug), errorCallback, "Folk", "getDynamicDetail", [msg]);
     },
-    goDynamicCommentList: function(msg,successCallback, errorCallback) { //native skip dynamicComnentList activity
-        cordova.exec(successCallback, errorCallback, "Folk", "goDynamicCommentList", [msg]);
+    goDynamicCommentList: function(msg,successCallback, errorCallback , isDebug) { //native skip dynamicComnentList activity
+        cordova.exec(app.successCallback(successCallback,isDebug), errorCallback, "Folk", "goDynamicCommentList", [msg]);
     },
-    commitDynamicLike: function(msg,successCallback, errorCallback) { //native skip dynamicComnentList activity
-        cordova.exec(successCallback, errorCallback, "Folk", "commitDynamicLike", [msg]);
+    commitDynamicLike: function(msg,successCallback, errorCallback , isDebug) { //native skip dynamicComnentList activity
+        cordova.exec(app.successCallback(successCallback,isDebug), errorCallback, "Folk", "commitDynamicLike", [msg]);
     },
     
     testFolk: function(message, successCallback, errorCallback) {
         cordova.exec(successCallback, errorCallback, "Folk", "testFolk", [message]);
-    }
+    },
+    successCallback:function(callback,isDebug){ //open dedug modoule
+        let debug = isDebug || false;
+        return debug ? function(msg){alert(msg);callback(msg);} : callback;
+    };
 
 };
