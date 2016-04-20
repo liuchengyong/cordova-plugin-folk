@@ -74,9 +74,6 @@ module.exports = {
         cordova.exec(app.successCallback(successCallback, isDebug), errorCallback, "Folk", "commitDynamicLike", [msg]);
     },
 
-    testFolk: function(message, successCallback, errorCallback) {
-        cordova.exec(successCallback, errorCallback, "Folk", "testFolk", [message]);
-    },
     successCallback: function(callback, isDebug) { //open dedug modoule
         var debug = isDebug || false;
         var debugCallback = function(msg) {
@@ -86,6 +83,5 @@ module.exports = {
             }
         };
         return debug ? debugCallback : callback;
-    };
-
+    }
 };
