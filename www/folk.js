@@ -72,7 +72,10 @@ module.exports = {
     },
     commitDynamicLike: function(msg, successCallback, errorCallback, isDebug) { //native skip dynamicComnentList activity
         cordova.exec(debugCallback(successCallback, isDebug), errorCallback, "Folk", "commitDynamicLike", [msg]);
-    }  
+    },
+    commitDynamicComment: function(msg, successCallback, errorCallback, isDebug) { //native skip dynamicComnentList activity
+        cordova.exec(debugCallback(successCallback, isDebug), errorCallback, "Folk", "commitDynamicComment", [msg]);
+    }    
 };
 
 function debugCallback(callback, isDebug) { //open dedug modoule

@@ -189,7 +189,14 @@ static NSMutableArray *alertList = nil;
   result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:arguments.firstObject];
   [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
 }
--(void)commitDynamicLike:(CDVInvokedUrlCommand *)command //native skip dynamicComnentList activity
+-(void)commitDynamicLike:(CDVInvokedUrlCommand *)command //commit dynamic like count and isLike
+{
+  NSArray *arguments = command.arguments;
+  CDVPluginResult* result;
+  result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:arguments.firstObject];
+  [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
+}
+-(void)commitDynamicComment:(CDVInvokedUrlCommand *)command //commit dynamic comments counts
 {
   NSArray *arguments = command.arguments;
   CDVPluginResult* result;
