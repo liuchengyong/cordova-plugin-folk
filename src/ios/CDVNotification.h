@@ -40,7 +40,7 @@
 
 
  //  资讯详情页
-  -(void)articleId:(CDVInvokedUrlCommand *)command;//获取资讯详情id
+  -(void)getArticleDetail:(CDVInvokedUrlCommand *)command;//获取资讯详情id
   -(void)commentsList:(CDVInvokedUrlCommand *)command; //跳转资讯评论列表
   -(void)topicDetail:(CDVInvokedUrlCommand *)command; //跳转点师详情
   -(void)refreshCommentNum:(CDVInvokedUrlCommand *)command; //通知移动端跟新评论数量

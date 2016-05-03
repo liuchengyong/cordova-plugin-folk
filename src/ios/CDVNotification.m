@@ -103,11 +103,12 @@ static NSMutableArray *alertList = nil;
 *资讯详情页
 *
 */
--(void)articleId:(CDVInvokedUrlCommand *)command //获取资讯详情id
+-(void)getArticleDetail:(CDVInvokedUrlCommand *)command //获取资讯详情id
 {
-   CDVPluginResult* result;
-   result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@"80A90D09-4984-4BFD-92FA-612C0AA197E7"];
-   [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
+  NSArray *arguments = command.arguments;
+  CDVPluginResult* result;
+  result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:arguments.firstObject];
+  [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
 }
 
 -(void)commentsList:(CDVInvokedUrlCommand *)command // 跳转资讯评论列表

@@ -32,15 +32,13 @@ module.exports = {
 
 
     //  资讯详情页
-    articleId: function(successCallback, errorCallback) { //获取资讯详情id
-        cordova.exec(successCallback, errorCallback, "Folk", "articleId", []);
+    getArticleDetail: function(msg,successCallback,errorCallback) { //获取资讯详情id和token
+        cordova.exec(successCallback, errorCallback, "Folk", "getArticleDetail", [msg]);
     },
-
     commentsList: function(articleId, successCallback, errorCallback) { //跳转资讯评论列表
         cordova.exec(successCallback, errorCallback, "Folk", "commentsList", [articleId]);
     },
-
-    topicDetail: function(name, successCallback, errorCallback) { //跳转点师详情
+    topicDetail: function(name, successCallback, errorCallback) { //跳转话题详情页面
         cordova.exec(successCallback, errorCallback, "Folk", "topicDetail", [name]);
     },
     refreshCommentNum: function(articleId, successCallback, errorCallback) { //通知移动端跟新评论数量

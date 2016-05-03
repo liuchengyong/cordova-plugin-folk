@@ -62,11 +62,10 @@ public class FolkPlugin extends CordovaPlugin {
 
         // news detail page 
         if (action.equals("topicDetail")) { //跳转点师详情
-            String topicId = args.getString(0);
-            callbackContext.success();
+            callbackContext.success(args.getString(0));
             return true;
-        }else if(action.equals("articleId")) { //获取资讯详情id
-            callbackContext.success("80A90D09-4984-4BFD-92FA-612C0AA197E7");
+        }else if(action.equals("getArticleDetail")) { //获取资讯详情id
+            callbackContext.success(args.getString(0));
             return true;
         }else if(action.equals("commentsList")){ //跳转资讯详情评论列表
             String articleId = args.getString(0);
