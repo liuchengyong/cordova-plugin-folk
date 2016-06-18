@@ -57,6 +57,10 @@ public class FolkPlugin extends CordovaPlugin {
         }else if(action.equals("showToast")){ //show tooltip
             callbackContext.success("toast");
             return true;
+        }else if(action.equals("getPageInit")){ //获取页面的基本信息
+           String type = args.getString(0);
+           callbackContext.success(type);
+           return true;
         }
 
 
@@ -93,6 +97,20 @@ public class FolkPlugin extends CordovaPlugin {
             return true;
         }
 
+        // 益达详情
+        if(action.equals("ydDoPay")){ 
+            String articleId = args.getString(0);
+            callbackContext.success(articleId);
+            return true;
+        }else if(action.equals("goTeacherDetail")){
+            String articleId = args.getString(0);
+            callbackContext.success(articleId);
+            return true;
+        }else if(action.equals("sendYdPageNews")){
+            String articleId = args.getString(0);
+            callbackContext.success(articleId);
+            return true;
+        }
 
         return false;
     }
