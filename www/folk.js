@@ -2,7 +2,7 @@ module.exports = {
 
     // 公共的方法
     imageShow: function(name, successCallback, errorCallback, isDebug) { //图片轮播
-        cordova.exec(debugCallback(successCallback, isDebug), errorCallback, "Folk", "imageShow", [name]);
+        cordova.exec(successCallback,errorCallback, "Folk", "imageShow", [name]);
     },
     isDebug: function(successCallback, errorCallback) { //是否生产环境
         cordova.exec(successCallback, errorCallback, "Folk", "isDebug", []);
@@ -11,7 +11,7 @@ module.exports = {
         cordova.exec(successCallback, errorCallback, "Folk", "focusWeChat", []);
     },
     getPostUrl: function(successCallback, errorCallback, isDebug) { //获取服务器的域名端口
-        cordova.exec(debugCallback(successCallback, isDebug), errorCallback, "Folk", "getPostUrl", []);
+        cordova.exec(successCallback, errorCallback, "Folk", "getPostUrl", []);
     },
     doShare: function(msg, successCallback, errorCallback) { //第三方分享 weixin/weibo/friend/all
         cordova.exec(successCallback, errorCallback, "Folk", "doShare", [msg]);
