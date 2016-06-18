@@ -19,12 +19,9 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import <AudioToolbox/AudioServices.h>
 #import <Cordova/CDVPlugin.h>
 
 @interface CDVNotification : CDVPlugin <UIAlertViewDelegate>{}
-
- -(void)testFolk:(CDVInvokedUrlCommand *)command;  //测试folk
 
   // 公共的方法
   -(void)imageShow:(CDVInvokedUrlCommand *)command;//图片轮播
@@ -36,6 +33,7 @@
   -(void)goLogin:(CDVInvokedUrlCommand *)command; //去登录页面
   -(void)getToken:(CDVInvokedUrlCommand *)command;//获得当前用户的token
   -(void)showToast:(CDVInvokedUrlCommand *)command;//客户端的Toast 
+  -(void)getPageInit:(CDVInvokedUrlCommand *)command; //获取页面的基本信息
 
 
 
@@ -45,17 +43,16 @@
   -(void)topicDetail:(CDVInvokedUrlCommand *)command; //跳转点师详情
   -(void)refreshCommentNum:(CDVInvokedUrlCommand *)command; //通知移动端跟新评论数量
 
- // 爆料详情页
-  -(void)getBrokeDetailId:(CDVInvokedUrlCommand *)command;//获取爆料详情id
-  -(void)brokeReply:(CDVInvokedUrlCommand *)command;//回复爆料评论
-  -(void)getBrokeDetail:(CDVInvokedUrlCommand *)command;//获取爆料信息
-  -(void)startComments:(CDVInvokedUrlCommand *)command;//开始评论
-
- // dynamic detail page 
+ // 动态详情页
   -(void)getDynamicDetail:(CDVInvokedUrlCommand *)command;//get dynamicDatail page baseNews
   -(void)goDynamicCommentList:(CDVInvokedUrlCommand *)command;//native skip dynamicComnentList activity
   -(void)commitDynamicLike:(CDVInvokedUrlCommand *)command;//commit dynamic like counts and isLike
   -(void)commitDynamicComment:(CDVInvokedUrlCommand *)command;//commit dynamic comments counts
+ 
+ //益达详情
+  -(void)ydDoPay:(CDVInvokedUrlCommand *)command; //益达详情去支付
+  -(void)goTeacherDetail:(CDVInvokedUrlCommand *)command; //跳转点事详情页
+  -(void)sendYdPageNews:(CDVInvokedUrlCommand *)command; //发送益达详情页的基本信息
 
 
 

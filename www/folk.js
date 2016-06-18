@@ -26,7 +26,10 @@ module.exports = {
         cordova.exec(successCallback, errorCallback, "Folk", "getToken", []);
     },
     showToast: function(msg, successCallback, errorCallback, isDebug) { //show tooltip
-        cordova.exec(debugCallback(successCallback, isDebug), errorCallback, "Folk", "showToast", [msg]);
+        cordova.exec(successCallback, errorCallback, "Folk", "showToast", [msg]);
+    },
+    getPageInit: function(msg, successCallback, errorCallback, isDebug) { //show tooltip
+        cordova.exec(successCallback, errorCallback, "Folk", "getPageInit", [msg]);
     },
 
 
@@ -45,44 +48,28 @@ module.exports = {
         cordova.exec(successCallback, errorCallback, "Folk", "refreshCommentNum", [articleId]);
     },
 
-
-    // 爆料详情页
-    getBrokeDetailId: function(successCallback, errorCallback) { //获取爆料详情id
-        cordova.exec(successCallback, errorCallback, "Folk", "getBrokeDetailId", []);
-    },
-    brokeReply: function(brokeId, successCallback, errorCallback) { //跳转资讯评论列表
-        cordova.exec(successCallback, errorCallback, "Folk", "brokeReply", [brokeId]);
-    },
-    getBrokeDetail: function(msg, successCallback, errorCallback) { //获取爆料详情id
-        cordova.exec(successCallback, errorCallback, "Folk", "getBrokeDetail", [msg]);
-    },
-    startComments: function(successCallback, errorCallback) { //开始评论
-        cordova.exec(successCallback, errorCallback, "Folk", "startComments", []);
-    },
-
-
-    // dynamic detail page
+    // 动态详情
     getDynamicDetail: function(msg, successCallback, errorCallback, isDebug) { //get dynamicDatail page baseNews
-        cordova.exec(debugCallback(successCallback, isDebug), errorCallback, "Folk", "getDynamicDetail", [msg]);
+        cordova.exec(successCallback, errorCallback, "Folk", "getDynamicDetail", [msg]);
     },
     goDynamicCommentList: function(msg, successCallback, errorCallback, isDebug) { //native skip dynamicComnentList activity
-        cordova.exec(debugCallback(successCallback, isDebug), errorCallback, "Folk", "goDynamicCommentList", [msg]);
+        cordova.exec(successCallback, errorCallback, "Folk", "goDynamicCommentList", [msg]);
     },
     commitDynamicLike: function(msg, successCallback, errorCallback, isDebug) { //native skip dynamicComnentList activity
-        cordova.exec(debugCallback(successCallback, isDebug), errorCallback, "Folk", "commitDynamicLike", [msg]);
+        cordova.exec(successCallback, errorCallback, "Folk", "commitDynamicLike", [msg]);
     },
     commitDynamicComment: function(msg, successCallback, errorCallback, isDebug) { //native skip dynamicComnentList activity
-        cordova.exec(debugCallback(successCallback, isDebug), errorCallback, "Folk", "commitDynamicComment", [msg]);
-    }    
-};
+        cordova.exec(successCallback, errorCallback, "Folk", "commitDynamicComment", [msg]);
+    },    
 
-function debugCallback(callback, isDebug) { //open dedug modoule
-    var debug = isDebug || false;
-    var debugCallback = function(msg) {
-        alert(msg);
-        if (callback != undefined && callback != null) {
-            callback(msg);
-        }
-    };
-    return debug ? debugCallback : callback;
-}
+    //  益达详情页
+    ydDoPay: function(msg,successCallback,errorCallback) { //获取资讯详情id和token
+        cordova.exec(successCallback, errorCallback, "Folk", "ydDoPay", [msg]);
+    },
+    goTeacherDetail: function(msg,successCallback,errorCallback) { //获取资讯详情id和token
+        cordova.exec(successCallback, errorCallback, "Folk", "goTeacherDetail", [msg]);
+    },
+    sendYdPageNews: function(msg,successCallback,errorCallback) { //获取资讯详情id和token
+        cordova.exec(successCallback, errorCallback, "Folk", "sendYdPageNews", [msg]);
+    }
+};

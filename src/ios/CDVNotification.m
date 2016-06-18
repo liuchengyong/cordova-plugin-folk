@@ -18,13 +18,6 @@
  */
 
 #import "CDVNotification.h"
-
-#define DIALOG_TYPE_ALERT @"alert"
-#define DIALOG_TYPE_PROMPT @"prompt"
-
-static void soundCompletionCallback(SystemSoundID ssid, void* data);
-static NSMutableArray *alertList = nil;
-
 @implementation CDVNotification
 
 /**
@@ -98,6 +91,15 @@ static NSMutableArray *alertList = nil;
    [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
 }
 
+-(void)getPageInit:(CDVInvokedUrlCommand *)command //获取页面的基本信息
+{
+   NSArray *arguments = command.arguments;
+   CDVPluginResult* result;
+   result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:arguments.firstObject];
+   [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
+}
+
+
 /**
 * 
 *资讯详情页
@@ -137,42 +139,6 @@ static NSMutableArray *alertList = nil;
 
 
 /**
-* 
-* 爆料详情页
-*
-*/
--(void)getBrokeDetailId:(CDVInvokedUrlCommand *)command //获取爆料详情id
-{
-   CDVPluginResult* result;
-   result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@"244D8A86-A1BD-4C6A-8601-2A4874CA0DB5"];
-   [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
-}
-
--(void)brokeReply:(CDVInvokedUrlCommand *)command //回复爆料评论  参数 爆料id
-{
-   NSArray *arguments = command.arguments;
-   CDVPluginResult* result;
-   result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:arguments.firstObject];
-   [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
-}
-
--(void)getBrokeDetail:(CDVInvokedUrlCommand *)command //获取爆料页面相关信息
-{
-  NSArray *arguments = command.arguments;
-   CDVPluginResult* result;
-   result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:arguments.firstObject];
-   [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
-}
-
--(void)startComments:(CDVInvokedUrlCommand *)command //获取爆料页面相关信息
-{
-  CDVPluginResult* result;
-  result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@"start"];
-  [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
-}
-
-
-/**
  *
  * dynamic detail page 
  */
@@ -205,26 +171,29 @@ static NSMutableArray *alertList = nil;
   [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
 }
 
-
-
--(void)testFolk:(CDVInvokedUrlCommand *)command
+/**
+ *
+ * yd detail page
+ */
+-(void)ydDoPay:(CDVInvokedUrlCommand *)command //commit dynamic comments counts
 {
-    NSString *methedName = command.methodName;
-    NSArray *arguments = command.arguments;
-
-    if ([methedName isEqualToString:@"testFolk"]) {
-        CDVPluginResult* result;
-        if (arguments.count > 0) {
-            result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:arguments.firstObject];
-        } else {
-            result = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"error"];
-        }
-        [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
-    }else{
-       CDVPluginResult* result;
-       result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@"error"];
-       [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
-   }
+  NSArray *arguments = command.arguments;
+  CDVPluginResult* result;
+  result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:arguments.firstObject];
+  [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
 }
-
+-(void)goTeacherDetail:(CDVInvokedUrlCommand *)command //commit dynamic comments counts
+{
+  NSArray *arguments = command.arguments;
+  CDVPluginResult* result;
+  result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:arguments.firstObject];
+  [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
+}
+-(void)sendYdPageNews:(CDVInvokedUrlCommand *)command //commit dynamic comments counts
+{
+  NSArray *arguments = command.arguments;
+  CDVPluginResult* result;
+  result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:arguments.firstObject];
+  [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
+}
 @end
