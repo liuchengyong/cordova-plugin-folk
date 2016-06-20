@@ -98,15 +98,15 @@ public class FolkPlugin extends CordovaPlugin {
         }
 
         // 益达详情
-        if(action.equals("ydDoPay")){ 
+        if(action.equals("ydDoPay")){  // 去支付
             String articleId = args.getString(0);
             callbackContext.success(articleId);
             return true;
-        }else if(action.equals("goTeacherDetail")){
+        }else if(action.equals("goTeacherDetail")){  //去导师详情页面
             String articleId = args.getString(0);
             callbackContext.success(articleId);
             return true;
-        }else if(action.equals("sendYdPageNews")){
+        }else if(action.equals("sendYdPageNews")){ // 发送益达详情的页面数据
             String articleId = args.getString(0);
             callbackContext.success(articleId);
             return true;
